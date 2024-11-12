@@ -27,6 +27,7 @@ public class Game {
     private void playGame() {
         while (!isGameOver()) {
             userInterface.displayProgress(progress.toString());
+            userInterface.displayMessage("Залишилось спроб: " + attempts);
             char letter = userInterface.getUserInput();
             checkLetter(letter);
         }
