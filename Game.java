@@ -2,26 +2,27 @@ public class Game {
     private String wordToGuess;
     private StringBuilder progress;
     private int attempts;
-    private WordGenerator wordGenerator;
-    private UserInterface userInterface;
+    private final WordGenerator wordGenerator;
+    private final UserInterface userInterface;
 
-    public Game() {
-        this.wordGenerator = new WordGenerator();
-        this.userInterface = new UserInterface();
+    public Game(WordGenerator wordGenerator, UserInterface userInterface) {
+        this.wordGenerator = wordGenerator;
+        this.userInterface = userInterface;
     }
 
     public void startGame() {
         wordToGuess = wordGenerator.getRandomWord();
         progress = new StringBuilder("_".repeat(wordToGuess.length()));
         attempts = 7;
-        userInterface.displayMessage("Гра почалась! Відгадай слово.\n" +
-                "Правила:\n" +
-                "1. У вас 7 спроб вгадати слово.\n" +
-                "2. За одну спробу можна ввести тільки одну літеру.\n" +
-                "3. Спроб меншає, якщо ви не вгадали літеру.\n" +
-                "Категорія: Тварини");
+        userInterface.displayMessage("""
+                Гра почалась! Відгадай слово.
+                Правила:
+                1. У вас 7 спроб вгадати слово.
+                2. За одну спробу можна ввести тільки одну літеру.
+                3. Спроб меншає, якщо ви не вгадали літеру.
+                Категорія: Тварини
+                """);
         playGame();
-
     }
 
     private void playGame() {
@@ -62,3 +63,4 @@ public class Game {
         }
     }
 }
+
