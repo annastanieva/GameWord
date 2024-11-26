@@ -85,7 +85,6 @@ public class Game {
         }
     }
 
-    // Додаткові методи для отримання стану гри (опціонально)
     public String getProgress() {
         return progress.toString();
     }
