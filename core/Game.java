@@ -1,3 +1,8 @@
+package core;
+
+import generator.WordGenerator;
+import ui.UserInterface;
+
 public class Game {
     private String wordToGuess;
     private StringBuilder progress;
@@ -63,4 +68,3 @@ public class Game {
         }
     }
 }
-

@@ -1,3 +1,5 @@
+package ui;
+
 public interface UserInterface {
     void displayMessage(String message);
     char getUserInput();
